@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --fuente: 'Karla', sans-serif;
+    /* Colors */
+    /* Primary */
+    --Cyan: hsl(179, 62%, 43%);
+    --BrightYellow: hsl(71, 73%, 54%);
+    /* Neutral */
+    --LightGray: hsl(204, 43%, 93%);
+    --GrayishBlue: hsl(218, 22%, 67%);
+
+}
+body{
+    font-size: 16px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--LightGray);
+    font-family: var(--fuente);
+}
+.card{
+    display: grid;
+    grid-template-areas: 
+    "elemento1 elemento1"
+    "elemento2 elemento3";
+    box-shadow: 0 0 20px gray;
+    border-radius: 5px;
+    
+}
+
+.card__card-uno{
+    background-color: #fff;
+    width: 650px;
+    grid-area: elemento1;
+    border-radius: 5px 5px 0 0;
+    padding: 40px;
+}
+.card__uno-titulo{
+    font-weight: 700;
+    color: var(--Cyan);
+    margin-bottom: 20px;
+}
+.card__uno-subtitulo{
+    color: var(--BrightYellow);
+    margin-bottom: 10px;
+}
+.card__uno-parrafo{
+    color: var(--GrayishBlue);
+    line-height: 1.5;
+}
+.card__card-dos{
+    background-color: var(--Cyan);
+    width: 325px;
+    grid-area: elemento2;
+    color: #fff;
+    border-radius: 0 0 0 5px;
+    padding: 40px;
+}
+.card__dos-titulo{
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.card__dos-precio{
+   font-size: 2.1em;
+   display: flex;
+   align-items: center;
+   font-weight: 700;
+   margin-bottom: 10px;
+}
+.card__dos-precio span{
+    color: var(--LightGray);
+    font-size: .5em;
+    text-align: end;
+    margin-left: 10px;
+    font-weight: 400;
+}
+.card__dos-subtitulo{
+    color: var(--LightGray);
+    margin-bottom: 30px;
+}
+.card__dos-btn{
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--BrightYellow);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 0 5px gray;
+}
+.card__dos-btn:hover{
+    scale: 1.05;
+}
+.card__card-tres{
+    background-color: hsl(179, 47%, 52%);
+    width: 325px;
+    grid-area: elemento3;
+    color: #fff; 
+    border-radius: 0 0 5px 0;
+    padding: 40px;
+}
+.card__tres-titulo{
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.card__tres-parrafo{
+    line-height: 1.5;
+    font-size: .9em;
+    margin-right: 65px;  
+}
+
+@media(min-width:200px) and (max-width:740px) {
+
+    body{
+        height: auto;
+    }
+    .card{
+      
+        grid-template-areas: 
+        "elemento1"
+        "elemento2" 
+        "elemento3"
+    }
+    .card__card-uno{
+        width: 325px;
+        border-radius: 5px 5px 0 0;
+    }
+    .card__card-dos{
+        border-radius: 0;
+    }
+    .card__card-tres{
+        border-radius: 0 0 5px 5px;
+    }
+
+}
